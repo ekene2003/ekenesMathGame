@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+     <head>
+          <meta charset="UTF-8">
+          <meta http-equiv="X-UA-Compatible" content="IE=edge">
+          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <title>easy page</title>
+          <link rel="stylesheet" href="./assets/css/math.css">
+     </head>
+
+     <body class="main-body"
+     >
+          <header class="quiz-header">
+               <div class="nav-logo">
+                    <img class="brand-img" src="./assets/images/IMG_9630.JPEG" alt="">
+                    <h2>EKENESZN</h2>
+               </div>
+          </header>
+          <div class="start-part">
+               <h1 class="start-part-head">Are you ready?</h1>
+               <div class="start-btn">
+                    <button class="yes">Yes</button>
+                    <a href="./index.html"><button class="no">No</button></a>
+               </div>
+          </div>
+          <div >
+               <div class="timer"></div>
+               <div class="easy-body">
+                    <div class="question-slide">
+                    </div>
+               </div>
+               <div class="buttons">
+                    <button class="Previous">Previous</button>
+                    <button class="next">Next</button>
+                    <button class="submit">Submit</button>
+               </div>
+                    <div class="alert"><h2>Time's Up !!!!</h2></div>
+                    <div class="result">
+                    </div>
+                       
+          </div>
+          <script>
+               let mathquiz = [
+                    {
+                         question: 'What is 2+2 ?',
+                         answer: 2 + 2,
+                         page: 1,
+                         firstopt: 2,
+                         secondopt: 4,
+                         thirdopt: 7
+                    },
+                    {
+                         question: 'What is 5 * 5 ?',
+                         answer: 5 * 5,
+                         page: 2,
+                         firstopt: 21,
+                         secondopt: 25,
+                         thirdopt: 44
+                    },
+                    {
+                         question: 'What is 10 - 3 ?',
+                         answer: 10 - 3,
+                         page: 3,
+                         firstopt: 5,
+                         secondopt: 2,
+                         thirdopt: 7
+                    },
+                    {
+                         question: 'What is 21+2 ?',
+                         answer: 21 + 2,
+                         page: 4,
+                         firstopt: 23,
+                         secondopt: 11,
+                         thirdopt: 9
+                    },
+                    {
+                         question: 'What is 8/2 ?',
+                         answer: 8 / 2,
+                         page: 5,
+                         firstopt: 3,
+                         secondopt: 6,
+                         thirdopt: 4
+                    },
+                    {
+                         question: 'What is 4 x 3 + 2 ?',
+                         answer: 4 * 3 + 2,
+                         page: 6,
+                         firstopt: 13,
+                         secondopt: 19,
+                         thirdopt: 14
+                    },
+                    {
+                         question: 'What is 71-10 ?',
+                         answer: 71 - 10,
+                         page: 7,
+                         firstopt: 61,
+                         secondopt: 33,
+                         thirdopt: 2
+                    },
+                    {
+                         question: 'What is 12-2 ?',
+                         answer: 12 - 2,
+                         page: 8,
+                         firstopt: 10,
+                         secondopt: 5,
+                         thirdopt: 17
+                    },
+                    {
+                         question: 'What is 12+12 ?',
+                         answer: 12 + 12,
+                         page: 9,
+                         firstopt: 24,
+                         secondopt: 15,
+                         thirdopt: 10
+                    },
+                    {
+                         question: 'What is 23+5 ?',
+                         answer: 23 + 5,
+                         page: 10,
+                         firstopt: 28,
+                         secondopt: 23,
+                         thirdopt: 47
+                    },
+               ];
+               function singleelem(elem) {
+                    return document.querySelector(elem);
+               };
+               function multielem(elem) {
+                    return document.querySelectorAll(elem);
+               };
+                    let submitBtn = singleelem(".submit");
+               let easySection = singleelem(".easy-body");
+               let slider = singleelem(".question-slide");
+               let pagenumber = singleelem("page-no");
+               let timer = singleelem(".timer");
+               let yesBtn = singleelem(".yes");
+                    let nextBtn = singleelem(".next");
+                         let previousBtn = singleelem(".Previous");
+                         let question = singleelem(".question");
+                              let result = singleelem(".result");
+                         i = 0;
+                         let score = 0;
+               mathquiz.forEach(element => {
+                    //  console.log(element);
+                    let { question, answer, page, firstopt, secondopt, thirdopt } = element;
+                    slider.innerHTML += `
+                    <div class="questions">
+                         <div class="top-part">
+                              <h3 class="question-head"> ${question}</h3>
+                              <div class="page">${page}/10</div>
+                              <div class = "answer">${answer}</div>
+                         </div>
+                         <ol class="option-wrap">
+                              <li><div class="options">${firstopt}</div></li>
+                              <li><div class="options">${secondopt}</div></li>
+                              <li><div class="options">${thirdopt}</div></li>
+                         </ol>
+
+                </div>`;
+                              let options = multielem(".options");
+                              let quizAnswer = multielem(".answer");
+                              console.log();
+                          options.forEach(option => {
+                               option.onclick=()=>{
+                                    console.log(option.innerText);
+                               }
+                          });    
+               });
+
+               nextBtn.onclick = () => {
+                    i += 1;
+                    slider.style.right = `${i + "00%"}`;
+                    if (slider.style.right == "1000%") {
+                         slider.style.right = "0%";
+                         i = 0;
+                    }
+               };
+               previousBtn.onclick = () => {
+                    i--;
+                    slider.style.right = `${i + "00%"}`;
+                    if (slider.style.right == '-100%') {
+                         slider.style.right = "900%";
+                         i = 9;
+                    }
+               }
+               let time = 0;
+               
+                    let easySide = singleelem(".easy-body");
+                    let startSection= singleelem(".start-part");
+                         let alert = singleelem(".alert");
+                    yesBtn.onclick=()=>{
+                     startSection.style.display = "none";
+                     let timemng =
+                              setInterval(() => {
+                                   timer.innerHTML = `<p>Timer:${time++}:00</p>`;
+                                   if (time > 2) {
+                                        alert.style.display="block";
+                                        clearInterval(timemng);
+                                   }
+                              }, 1000);
+                    };
+
+          </script>
+     </body>
+
+</html>
