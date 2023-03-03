@@ -7,10 +7,18 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>easy page</title>
           <link rel="stylesheet" href="./assets/css/math.css">
+     <link rel="stylesheet" href="./assets/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Cinzel:wght@400;600&family=Edu+TAS+Beginner&family=Edu+VIC+WA+NT+Beginner&family=Exo:wght@300&family=Lobster&family=Monoton&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Slab:wght@100;300&family=Silkscreen&display=swap"
+          rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Cinzel:wght@400;600&family=Edu+TAS+Beginner&family=Edu+VIC+WA+NT+Beginner&family=Exo:wght@300&family=Genos:ital,wght@0,400;1,100&family=IBM+Plex+Serif:wght@300&family=Lobster&family=Monoton&family=Nanum+Gothic&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Slab:wght@100;300&family=Silkscreen&display=swap"
+          rel="stylesheet">
      </head>
 
-     <body class="main-body"
-     >
+     <body class="main-body">
           <header class="quiz-header">
                <div class="nav-logo">
                     <img class="brand-img" src="./assets/images/IMG_9630.JPEG" alt="">
@@ -19,6 +27,10 @@
           </header>
           <div class="start-part">
                <h1 class="start-part-head">Are you ready?</h1>
+               <h3 class="rules-head">Rules of the game</h3>
+               <p class="rules">1. you have only 40 seconds to answer all questions.</p>
+               <p class="rules">2. you can only select one answer from the options.</p>
+               <p class="rules">3. once your timer elapses it submits automatically.</p>
                <div class="start-btn">
                     <button class="yes">Yes</button>
                     <a href="./index.html"><button class="no">No</button></a>
@@ -35,14 +47,18 @@
                     <button class="next">Next</button>
                     <button class="submit">Submit</button>
                </div>
-                    <div class="alert"><h2>Time's Up !!!!</h2></div>
-                    <div class="result">
+                    <div class="alert">
+                         <h2>Time's Up !!!!</h2>
                     </div>
-                       
-          </div>
+                    <div class="result">
+                         </div>
+                    </div>
+                    <script src="./assets/js/all.min.js"></script>
           <script>
                let mathquiz = [
                     {
+                         questionID: 1,
+                         AnswerID: 1,
                          question: 'What is 2+2 ?',
                          answer: 2 + 2,
                          page: 1,
@@ -52,6 +68,8 @@
                     },
                     {
                          question: 'What is 5 * 5 ?',
+                         questionID: 2,
+                         AnswerID: 2,
                          answer: 5 * 5,
                          page: 2,
                          firstopt: 21,
@@ -60,6 +78,8 @@
                     },
                     {
                          question: 'What is 10 - 3 ?',
+                         questionID: 3,
+                         AnswerID: 3,
                          answer: 10 - 3,
                          page: 3,
                          firstopt: 5,
@@ -68,6 +88,8 @@
                     },
                     {
                          question: 'What is 21+2 ?',
+                         questionID: 4,
+                         AnswerID: 4,
                          answer: 21 + 2,
                          page: 4,
                          firstopt: 23,
@@ -76,6 +98,8 @@
                     },
                     {
                          question: 'What is 8/2 ?',
+                         questionID: 5,
+                         AnswerID: 5,
                          answer: 8 / 2,
                          page: 5,
                          firstopt: 3,
@@ -84,6 +108,8 @@
                     },
                     {
                          question: 'What is 4 x 3 + 2 ?',
+                         questionID: 6,
+                         AnswerID: 6,
                          answer: 4 * 3 + 2,
                          page: 6,
                          firstopt: 13,
@@ -92,6 +118,8 @@
                     },
                     {
                          question: 'What is 71-10 ?',
+                         questionID: 7,
+                         AnswerID: 7,
                          answer: 71 - 10,
                          page: 7,
                          firstopt: 61,
@@ -100,6 +128,8 @@
                     },
                     {
                          question: 'What is 12-2 ?',
+                         questionID: 8,
+                         AnswerID: 8,
                          answer: 12 - 2,
                          page: 8,
                          firstopt: 10,
@@ -108,6 +138,8 @@
                     },
                     {
                          question: 'What is 12+12 ?',
+                         questionID: 9,
+                         AnswerID: 9,
                          answer: 12 + 12,
                          page: 9,
                          firstopt: 24,
@@ -116,6 +148,8 @@
                     },
                     {
                          question: 'What is 23+5 ?',
+                         questionID: 10,
+                         AnswerID: 10,
                          answer: 23 + 5,
                          page: 10,
                          firstopt: 28,
@@ -137,8 +171,9 @@
                let yesBtn = singleelem(".yes");
                     let nextBtn = singleelem(".next");
                          let previousBtn = singleelem(".Previous");
-                         let question = singleelem(".question");
+                                                                 let question = singleelem(".questions");
                               let result = singleelem(".result");
+
                          i = 0;
                          let score = 0;
                mathquiz.forEach(element => {
@@ -155,17 +190,56 @@
                               <li><div class="options">${firstopt}</div></li>
                               <li><div class="options">${secondopt}</div></li>
                               <li><div class="options">${thirdopt}</div></li>
-                         </ol>
-
+                         </ol> 
                 </div>`;
-                              let options = multielem(".options");
-                              let quizAnswer = multielem(".answer");
-                              console.log();
-                          options.forEach(option => {
-                               option.onclick=()=>{
-                                    console.log(option.innerText);
-                               }
-                          });    
+                    let options = multielem(".options");
+                    // options.forEach(opt => {
+                    //      opt.onclick = () => {
+                    //           let choosenOption = opt.innerText;
+                    //           console.log(choosenOption);
+                    //           // Answer.forEach(ans => {
+                    //           //      console.log(ans.innerText);
+                    //           // });
+                    //      }
+                    // });
+                    let timesClicked = 0;
+                    options.forEach((option) => {
+                         option.onclick = () => {
+                              const clickedOption = option.innerText;
+                              const answerElement = option
+                                   .closest(".questions")
+                                   .querySelector(".answer");
+                              const correctAnswer = answerElement.innerText;
+                              if (clickedOption === correctAnswer) {
+                                   option.style.color = "green"
+                                   score += 10;
+                                   console.log(score);
+                              }
+                              else {
+                                   score += 0;
+                                   option.style.color = "red";
+                                   console.log(score);
+                              }
+                         };
+                    });
+                    submitBtn.onclick = () => {
+                         // timer.style.display = "none";
+                         // submitBtn.style.display = "none";
+                         // previousBtn.style.display = "none";
+                         // nextBtn.style.display = "none";
+                         result.innerHTML = `
+               <div class="result-body">
+                    <i class="fa fa-crown"></i>
+                    <h2 class="result-head">CONGRATULATIONS</h2>
+                    <p class="result-paragraph">you score is ${score}/100</p>
+                    <div class="result-btn">
+                         <a href="./easy.html"><button class="play-again">Play Again</button></a>
+                         <a href="./medium.html"><button class="play-again">Increase Level</button></a>
+                    </div>
+               </div>
+             `
+                    }
+
                });
 
                nextBtn.onclick = () => {
@@ -190,12 +264,24 @@
                     let startSection= singleelem(".start-part");
                          let alert = singleelem(".alert");
                     yesBtn.onclick=()=>{
+                         timer.style.display = "block";
                      startSection.style.display = "none";
                      let timemng =
                               setInterval(() => {
                                    timer.innerHTML = `<p>Timer:${time++}:00</p>`;
-                                   if (time > 2) {
+                                   if (time > 40) {
                                         alert.style.display="block";
+                                        result.innerHTML = `
+               <div class="result-body">
+                    <i class="fa fa-crown"></i>
+                    <h2 class="result-head">CONGRATULATIONS</h2>
+                    <p class="result-paragraph">you score is ${score}/100</p>
+                    <div class="result-btn">
+                         <a href="./easy.html"><button class="play-again">Play Again</button></a>
+                         <a href="./medium.html"><button class="play-again">Increase Level</button></a>
+                    </div>
+               </div>
+             `
                                         clearInterval(timemng);
                                    }
                               }, 1000);
