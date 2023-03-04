@@ -7,15 +7,16 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>easy page</title>
           <link rel="stylesheet" href="./assets/css/math.css">
-     <link rel="stylesheet" href="./assets/css/all.min.css">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Cinzel:wght@400;600&family=Edu+TAS+Beginner&family=Edu+VIC+WA+NT+Beginner&family=Exo:wght@300&family=Lobster&family=Monoton&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Slab:wght@100;300&family=Silkscreen&display=swap"
-          rel="stylesheet">
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Cinzel:wght@400;600&family=Edu+TAS+Beginner&family=Edu+VIC+WA+NT+Beginner&family=Exo:wght@300&family=Genos:ital,wght@0,400;1,100&family=IBM+Plex+Serif:wght@300&family=Lobster&family=Monoton&family=Nanum+Gothic&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Slab:wght@100;300&family=Silkscreen&display=swap"
-          rel="stylesheet">
+          <link rel="stylesheet" href="./assets/css/all.min.css">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Cinzel:wght@400;600&family=Edu+TAS+Beginner&family=Edu+VIC+WA+NT+Beginner&family=Exo:wght@300&family=Lobster&family=Monoton&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Slab:wght@100;300&family=Silkscreen&display=swap"
+               rel="stylesheet">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Bangers&family=Cinzel:wght@400;600&family=Edu+TAS+Beginner&family=Edu+VIC+WA+NT+Beginner&family=Exo:wght@300&family=Genos:ital,wght@0,400;1,100&family=IBM+Plex+Serif:wght@300&family=Lobster&family=Monoton&family=Nanum+Gothic&family=Press+Start+2P&family=Roboto+Flex:opsz,wght@8..144,200&family=Roboto+Slab:wght@100;300&family=Silkscreen&display=swap"
+               rel="stylesheet">
+               <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
      </head>
 
      <body class="main-body">
@@ -28,7 +29,7 @@
           <div class="start-part">
                <h1 class="start-part-head">Are you ready?</h1>
                <h3 class="rules-head">Rules of the game</h3>
-               <p class="rules">1. you have only 40 seconds to answer all questions.</p>
+               <p class="rules">1. you have only 30 seconds to answer all questions.</p>
                <p class="rules">2. you can only select one answer from the options.</p>
                <p class="rules">3. once your timer elapses it submits automatically.</p>
                <div class="start-btn">
@@ -36,9 +37,9 @@
                     <a href="./index.html"><button class="no">No</button></a>
                </div>
           </div>
-          <div >
+          <div>
                <div class="timer"></div>
-               <div class="easy-body">
+               <div class="easy-body center">
                     <div class="question-slide">
                     </div>
                </div>
@@ -47,13 +48,14 @@
                     <button class="next">Next</button>
                     <button class="submit">Submit</button>
                </div>
-                    <div class="alert">
-                         <h2>Time's Up !!!!</h2>
-                    </div>
-                    <div class="result">
-                         </div>
-                    </div>
-                    <script src="./assets/js/all.min.js"></script>
+               <div class="alert">
+                    <h2>Time's Up !!!!</h2>
+               </div>
+               <div class="result">
+               </div>
+               </div>
+               <script src="./assets/js/all.min.js"></script>
+          <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
           <script>
                let mathquiz = [
                     {
@@ -172,10 +174,10 @@
                     let nextBtn = singleelem(".next");
                          let previousBtn = singleelem(".Previous");
                                                                  let question = singleelem(".questions");
-                              let result = singleelem(".result");
-
+                                                                      let result = singleelem(".result");
                          i = 0;
                          let score = 0;
+
                mathquiz.forEach(element => {
                     //  console.log(element);
                     let { question, answer, page, firstopt, secondopt, thirdopt } = element;
@@ -183,7 +185,7 @@
                     <div class="questions">
                          <div class="top-part">
                               <h3 class="question-head"> ${question}</h3>
-                              <div class="page">${page}/10</div>
+                              <div class="page">${page} of 10</div>
                               <div class = "answer">${answer}</div>
                          </div>
                          <ol class="option-wrap">
@@ -192,17 +194,8 @@
                               <li><div class="options">${thirdopt}</div></li>
                          </ol> 
                 </div>`;
+
                     let options = multielem(".options");
-                    // options.forEach(opt => {
-                    //      opt.onclick = () => {
-                    //           let choosenOption = opt.innerText;
-                    //           console.log(choosenOption);
-                    //           // Answer.forEach(ans => {
-                    //           //      console.log(ans.innerText);
-                    //           // });
-                    //      }
-                    // });
-                    let timesClicked = 0;
                     options.forEach((option) => {
                          option.onclick = () => {
                               const clickedOption = option.innerText;
@@ -213,25 +206,32 @@
                               if (clickedOption === correctAnswer) {
                                    option.style.color = "green"
                                    score += 10;
-                                   console.log(score);
+
                               }
                               else {
                                    score += 0;
                                    option.style.color = "red";
-                                   console.log(score);
+
                               }
                          };
                     });
                     submitBtn.onclick = () => {
-                         // timer.style.display = "none";
-                         // submitBtn.style.display = "none";
-                         // previousBtn.style.display = "none";
-                         // nextBtn.style.display = "none";
+                         clearInterval(timemng);
+                         let comment = "";
+                         if (score > 60) {
+                              comment = "You did great ";
+
+                         }
+                         if (score < 60) {
+                              comment = "You can do better ";
+
+                         }
                          result.innerHTML = `
                <div class="result-body">
                     <i class="fa fa-crown"></i>
-                    <h2 class="result-head">CONGRATULATIONS</h2>
-                    <p class="result-paragraph">you score is ${score}/100</p>
+                    <h2 class="result-head">${comment
+                              }</h2>
+                    <p class="result-paragraph">your score is ${score}/100</p>
                     <div class="result-btn">
                          <a href="./easy.html"><button class="play-again">Play Again</button></a>
                          <a href="./medium.html"><button class="play-again">Increase Level</button></a>
@@ -241,7 +241,6 @@
                     }
 
                });
-
                nextBtn.onclick = () => {
                     i += 1;
                     slider.style.right = `${i + "00%"}`;
@@ -258,30 +257,41 @@
                          i = 9;
                     }
                }
-               let time = 0;
-               
+                                                                      let time = 0;
                     let easySide = singleelem(".easy-body");
-                    let startSection= singleelem(".start-part");
+                                                                      let startSection = singleelem(".start-part");
                          let alert = singleelem(".alert");
-                    yesBtn.onclick=()=>{
-                         timer.style.display = "block";
-                     startSection.style.display = "none";
-                     let timemng =
+                                                            let timemng;
+                                                            // let timemng;
+                                                            yesBtn.onclick = () => {
+                                                                 previousBtn.style.display = "block";
+                                                                 nextBtn.style.display = "block";
+                                                                 submitBtn.style.display = "block";
+                                                                 timer.style.display = "block";
+                                                                 startSection.style.display = "none";
+                                                            timemng =
                               setInterval(() => {
                                    timer.innerHTML = `<p>Timer:${time++}:00</p>`;
-                                   if (time > 40) {
-                                        alert.style.display="block";
+                                   if (time > 30) {
+                                        alert.style.display = "block";
+                                        let comment = "";
+                                        if (score > 60) {
+                                             comment = "You did great ";
+                                        }
+                                        if (score < 60) {
+                                             comment = "You can do better ";
+                                        }
                                         result.innerHTML = `
-               <div class="result-body">
-                    <i class="fa fa-crown"></i>
-                    <h2 class="result-head">CONGRATULATIONS</h2>
-                    <p class="result-paragraph">you score is ${score}/100</p>
-                    <div class="result-btn">
-                         <a href="./easy.html"><button class="play-again">Play Again</button></a>
-                         <a href="./medium.html"><button class="play-again">Increase Level</button></a>
-                    </div>
-               </div>
-             `
+                                             <div class="result-body">
+                                                  <i class="fa fa-crown"></i>
+                                                  <h2 class="result-head">${comment}</h2>
+                                                  <p class="result-paragraph">your score is ${score}/100</p>
+                                                  <div class="result-btn">
+                                                       <a href="./easy.html"><button class="play-again">Play Again</button></a>
+                                                       <a href="./medium.html"><button class="play-again">Increase Level</button></a>
+                                                  </div>
+                                             </div> `;
+                                             
                                         clearInterval(timemng);
                                    }
                               }, 1000);
