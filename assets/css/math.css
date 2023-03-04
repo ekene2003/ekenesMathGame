@@ -7,11 +7,10 @@
 }  
 @media screen and (min-width:768px)  {
      .home-body{
-     background-image: url(../images/math3.jpg);
+     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956425/math3_s9qmpi.jpg");
      background-size: cover;
      background-position: center;
 }
-
 .hompage-header{
      display: flex;
      padding: 1rem;
@@ -79,7 +78,7 @@ border:2px solid lightblue;
 }
 .main-body{
      /* background: tan; */
-background-image: url("../images/math3.jpg");
+background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956425/math3_s9qmpi.jpg");
      overflow: hidden;
 }
 .easy-body{
@@ -229,7 +228,7 @@ font-family: 'Genos', sans-serif;
      position: absolute;
      width: 100%;
      height:100%;
-     background-image: url("../images/math2.jpg");
+     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956640/math2_dshlfy.jpg");
       background-size: cover;
       background-position: center;
 }
@@ -364,7 +363,7 @@ font-family: 'Press Start 2P', cursive;
 }
 @media screen and (max-width:768px) {
      .home-body{
-     background-image: url(../images/math3.jpg);
+     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956425/math3_s9qmpi.jpg");
      background-size: cover;
      background-position: center;
 }
@@ -427,7 +426,7 @@ border:2px solid lightblue;
      background-color:transparent;
 }
 .main-body{
-background-image: url("../images/math3.jpg");
+background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956425/math3_s9qmpi.jpg");
      /* overflow: hidden; */
 }
 .easy-body{
@@ -552,7 +551,7 @@ font-family: 'Genos', sans-serif;
      position: absolute;
      right: 0;
      left: 0;
-     background-image: url("../images/math3.jpg");
+     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956425/math3_s9qmpi.jpg");
       background-size: cover;
       background-position: center;
       height: 100%;
