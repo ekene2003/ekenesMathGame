@@ -33,6 +33,7 @@
                <p class="rules">2. you can only select one answer from the options.</p>
                <p class="rules">3. once your timer elapses it submits automatically.</p>
                <p class="rules">4. ^ means raised to power</p>
+               <p class="rules">5. once you've answered the 10 questions, click the submit button to submit.</p>
                <div class="start-btn">
                     <button class="yes">Yes</button>
                     <a href="./index.html"><button class="no">No</button></a>
@@ -158,7 +159,7 @@
                let result = singleelem(".result");
                i = 0;
                let score = 0;
-
+               let timeClicked = 0;
                mathquiz.forEach(element => {
                     let { question, answer, page, firstopt, secondopt, thirdopt } = element;
                     slider.innerHTML += `
@@ -183,8 +184,14 @@
                                    .querySelector(".answer");
                               const correctAnswer = answerElement.innerText;
                               if (clickedOption === correctAnswer) {
-                                   option.style.color = "green"
-                                   score += 10;
+                                   timeClicked++;
+                                   if (timeClicked > 10) {
+                                        score += 0;
+                                   }
+                                   else {
+                                        option.style.color = "green"
+                                        score += 10;
+                                   }
 
                               }
                               else {
