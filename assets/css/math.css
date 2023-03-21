@@ -213,15 +213,12 @@ background: #000;
      color: white;
      width: 7rem;
      height: 2.5rem;
-     border-radius: 10%;
-     border: 2px solid lightblue;
-     font-size: 1.3rem;
+      font-size: 1.3rem;
      position: absolute;
      right: 1%;
      top: 2%;
      display: none;
 font-family: 'Genos', sans-serif;
-
 }
 .start-part{
      z-index: 9999;
@@ -537,8 +534,6 @@ background: #000;
      color: white;
      width: 8rem;
      height: 2.5rem;
-     border-radius: 10%;
-     border: 2px solid lightblue;
      font-size: 1.3rem;
      position: absolute;
      right: 4%;
