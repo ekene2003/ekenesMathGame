@@ -3,11 +3,10 @@
      margin: 0;
      box-sizing: border-box;
      outline: 0;
-
 }  
 @media screen and (min-width:768px)  {
      .home-body{
-     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1682411221/math2_piqufj.jpg");
+     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1682411310/math3_qdh3bj.jpg");
      background-size: cover;
      background-position: center;
 }
@@ -33,7 +32,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
-margin-top:3rem;
+margin-top:2rem;
 }
 .welcome{
 font-size: 5rem;
@@ -156,7 +155,7 @@ font-size: 1.6rem;
     left: 30%;
 }
 .Previous{
-     margin-top: 4rem;
+     margin-top: 6rem;
      padding: .5rem;
      cursor: pointer;
      border-radius: 2rem;
@@ -169,7 +168,7 @@ font-family: 'Press Start 2P', cursive;
  display: none;
 }
 .next{
-     margin-top: 4rem;
+     margin-top: 6rem;
      padding: .5rem;
      cursor: pointer;
      border-radius: 2rem;
@@ -183,7 +182,7 @@ font-family: 'Press Start 2P', cursive;
 
 }
 .submit{
-     margin-top: 4rem;
+     margin-top: 6rem;
      margin-left: 3rem;
      padding: .5rem;
      cursor: pointer;
@@ -225,7 +224,7 @@ font-family: 'Genos', sans-serif;
      position: absolute;
      width: 100%;
      height:100%;
-     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1677956640/math2_dshlfy.jpg");
+     background-image: url("https://res.cloudinary.com/dvznglupe/image/upload/v1682411310/math3_qdh3bj.jpg");
       background-size: cover;
       background-position: center;
 }
@@ -687,4 +686,3 @@ font-family: 'Press Start 2P', cursive;
     left: 30%;
 }
 }
-
